@@ -1,9 +1,12 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { RadioGroup } from "react-native-radio-buttons-group";
 import { TextInput } from "react-native";
 import { Text } from "react-native";
 import { View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       backgroundColor: '#f0f0f1',
@@ -19,7 +22,9 @@ const Untitled1 = () => {
                 id: "2",
                 label: "Option 2",
                 value: "option2"
-              }]} layout="row"></RadioGroup></View></View></View></View></ScrollView>
+              }]} layout="row"></RadioGroup><Pressable onPress={() => {
+                navigation.navigate("Untitled2");
+              }}><View style={styles.xqoCAHfY}><Text style={styles.xcpzCTOh}>NEXT</Text></View></Pressable></View></View></View></View></ScrollView>
     </SafeAreaView>;
 };
 
@@ -117,6 +122,28 @@ const styles = StyleSheet.create({
     position: "relative",
     top: 201,
     left: 56
+  },
+  xqoCAHfY: {
+    height: 47,
+    width: 115,
+    backgroundColor: "#54A6F3",
+    borderRadius: 4,
+    color: "#777777",
+    position: "absolute",
+    top: 269,
+    left: -95
+  },
+  xcpzCTOh: {
+    width: 100,
+    height: 24,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    top: 16,
+    left: 8,
+    textAlign: "center",
+    fontWeight: "500"
   }
 });
 export default Untitled1;
